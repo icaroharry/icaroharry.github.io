@@ -3,14 +3,15 @@
     <head>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.css" />
         <link rel="stylesheet" href="styles/main.css">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
     </head>
 
     <body layout="column" ng-controller="MainCtrl">
         <md-toolbar>
-            <div class="md-toolbar-tools" layout="row" layout-align="end center">
                 <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
-                 cd /c   <span class="visually-hidden">Menu</span>
+                 <span class="visually-hidden">Menu</span>
                 </button>
+            <div class="md-toolbar-tools" layout="row" layout-align="end center">
                 <md-button href="#home">Home</md-button>
                 <md-button href="#skills">Skills</md-button>
                 <md-button href="#home">Contact</md-button>
