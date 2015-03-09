@@ -1,0 +1,81 @@
+<html lang="en" ng-app="icaroioApp">
+
+    <head>
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+        <link rel="stylesheet" href="styles/main.css">
+        <link href="bower_components/material-design-icons/sprites/svg-sprite/svg-sprite-social.css" rel="stylesheet">
+    </head>
+
+    <body layout="column" ng-controller="MainCtrl">
+        <md-toolbar>
+            <div class="md-toolbar-tools" layout="row" layout-align="end center">
+                <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
+                 cd /c   <span class="visually-hidden">Menu</span>
+                </button>
+                <md-button href="#home">Home</md-button>
+                <md-button href="#skills">Skills</md-button>
+                <md-button href="#home">Contact</md-button>
+            </div>
+        </md-toolbar>
+        
+        <div layout="row" flex>
+            <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+                <md-content layout="column" layout-align="space-around center" class="md-padding">
+                    <div class="photo md-whiteframe-z2">
+                        <img src="images/icaro.png" alt="">
+                    </div>
+                </md-content>
+                <md-content class="md-padding"> 
+                    <md-list layout-align="space-around center">
+                        <md-item ng-repeat="info in infos" >
+                            <md-item-content class="padding:10px">
+                                <div class="md-tile-left">
+                                    <md-icon md-svg-src={{info.icon}} class="s24" alt=""></md-icon>
+                                </div>
+                            <div class="md-tile-content">
+                                {{info.about}}
+                            </div>
+                            </md-item-content>
+                            <md-divider ng-if="!$last"></md-divider>
+                        </md-item>
+                    </md-list>
+                </md-content>
+            </md-sidenav>
+            
+            <md-content ng-view md-scroll-y flex></md-content>            
+
+        </div>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+        <script>
+            !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+            (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+            r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+            }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-XXXXX-X');
+            ga('send', 'pageview');
+        </script>
+
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

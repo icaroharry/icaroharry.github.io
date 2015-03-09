@@ -1,0 +1,27 @@
+<div layout="column" flex id="content">
+    <md-content class="md-padding">
+        <md-card ng-repeat="language in languages">
+            <md-toolbar class="{{language.color}}" layout="row">
+                <h2 class="md-toolbar-tools">
+                    <span>{{language.name}}</span>
+                </h2>
+            </md-toolbar>
+            <md-card-content>
+                <md-list>
+                    <md-item ng-repeat="tool in language.tools">
+                        <md-item-content>
+                            <div class="md-tile-left">
+                                <img ng-src="{{tool.logo}}" class="logo" alt="">
+                            </div>
+                            <div class="md-tile-content">
+                                <h3>{{tool.name}}</h3>
+
+                                <md-progress-linear class="md-warn" md-mode="determinate" value="{{tool.skill}}"></md-progress-linear>
+                            </div>
+                        </md-item-content>
+                    </md-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+    </md-content>
+</div>
