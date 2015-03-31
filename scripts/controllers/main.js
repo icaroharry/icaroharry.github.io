@@ -9,7 +9,7 @@
  */
 
 angular.module('icaroioApp')
-    .controller('MainCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+    .controller('MainCtrl', ['$scope', '$mdSidenav', '$mdDialog', function($scope, $mdSidenav, $mdDialog){
         $scope.toggleSidenav = function(menuId) {
             $mdSidenav(menuId).toggle();
         };
@@ -17,6 +17,18 @@ angular.module('icaroioApp')
         $scope.getIconPath = function(type, name) {
             var iconPath = "bower_components/material-design-icons/" + type + "/svg/production/" + name + ".svg";
             return iconPath;
+        };
+
+        $scope.showAdvanced = function(ev) {
+            $mdDialog.show({
+                controller: DialogController,
+                templateUrl: 'views/contact.html',
+                targetEvent: ev,
+            }).then(function(answer) {
+                $scope.alert = 'You said the information was "' + answer + '".';
+            }, function() {
+                $scope.alert = 'You cancelled the dialog.';
+            });
         };
 
         $scope.infos = [
