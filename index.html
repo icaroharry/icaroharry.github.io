@@ -36,9 +36,7 @@
                             <div ng-hide="{{info.link}}" class="md-tile-content">
                                 {{info.about}}
                             </div>
-                            <div ng-show="{{info.link}}">
-                                <a href="{{info.link}}">{{info.about}}</a>
-                            </div>
+                            <a ng-show = "{{info.link}}" href="{{info.link}}"></a>
                             </md-item-content>
                             <md-divider ng-if="!$last"></md-divider>
                         </md-item>
