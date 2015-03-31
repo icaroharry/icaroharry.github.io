@@ -21,20 +21,35 @@ angular.module('icaroioApp')
 
         $scope.infos = [
             {
-                icon: $scope.getIconPath("social", "ic_person_24px"),
+                icon: "images/account.svg",
                 about: "Icaro Harry"
             },
             {
-                icon: $scope.getIconPath("communication", "ic_email_24px"),
+                icon: "images/email.svg",
                 about: "me@icaro.io"
             },
             {
-                icon: $scope.getIconPath("social", "ic_cake_24px"),
+                icon: "images/cake-variant.svg",
                 about: "19 years old"
             },
             {
-                icon: $scope.getIconPath("maps", "ic_place_24px"),
+                icon: "images/map-marker.svg",
                 about: "Belo Horizonte - MG"
+            },
+            {
+                icon: "images/facebook-box.svg",
+                about: "Facebook",
+                link: "https://www.facebook.com/IcaroHarry"
+            },
+            {
+                icon: "images/github-circle.svg",
+                about: "GitHub",
+                link: "https://www.github.com/icaroharry"
+            },
+            {
+                icon: "images/spotify.svg",
+                about: "Spotify",
+                link: "https://play.spotify.com/user/icaroharry"
             }
         ];
     }]);

@@ -33,8 +33,11 @@
                                 <div class="md-tile-left">
                                     <md-icon md-svg-src={{info.icon}} class="s24" alt=""></md-icon>
                                 </div>
-                            <div class="md-tile-content">
+                            <div ng-hide="{{info.link}}" class="md-tile-content">
                                 {{info.about}}
+                            </div>
+                            <div ng-show="{{info.link}}">
+                                <a href="{{info.link}}">{{info.about}}</a>
                             </div>
                             </md-item-content>
                             <md-divider ng-if="!$last"></md-divider>
