@@ -12,7 +12,7 @@ angular.module('icaroioApp')
         $scope.cards = [
         {
             title: "Hello!",
-            paragraph:"My name is Icaro and I'm a brazilian programmer. I'm studying Information Systems at UFMG (Universidade Federal de Minas Gerais) and I graduated as a technical in Computer Networks at CEFET-MG (Centro Federeal de Educação Tecnológica de Minas Gerais)."
+            paragraph:"My name is Icaro and I'm a brazilian programmer. I'm studying Information Systems at UFMG (Universidade Federal de Minas Gerais) and I graduated as a technical in Computer Networks at CEFET-MG (Centro Federal de Educação Tecnológica de Minas Gerais)."
         }
     ];
 });

@@ -9,7 +9,7 @@
  */
 
 angular.module('icaroioApp')
-    .controller('MainCtrl', ['$scope', '$mdSidenav', '$mdDialog', function($scope, $mdSidenav, $mdDialog){
+    .controller('MainCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav, $mdDialog){
         $scope.toggleSidenav = function(menuId) {
             $mdSidenav(menuId).toggle();
         };
@@ -19,17 +19,6 @@ angular.module('icaroioApp')
             return iconPath;
         };
 
-        $scope.showAdvanced = function(ev) {
-            $mdDialog.show({
-                controller: DialogController,
-                templateUrl: 'views/contact.html',
-                targetEvent: ev,
-            }).then(function(answer) {
-                $scope.alert = 'You said the information was "' + answer + '".';
-            }, function() {
-                $scope.alert = 'You cancelled the dialog.';
-            });
-        };
 
         $scope.infos = [
             {
