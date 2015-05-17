@@ -36,21 +36,6 @@ angular.module('icaroioApp')
             {
                 icon: "images/map-marker.svg",
                 about: "Belo Horizonte - MG"
-            },
-            {
-                icon: "images/facebook-box.svg",
-                about: "Facebook",
-                link: "https://www.facebook.com/IcaroHarry"
-            },
-            {
-                icon: "images/github-circle.svg",
-                about: "GitHub",
-                link: "https://www.github.com/icaroharry"
-            },
-            {
-                icon: "images/spotify.svg",
-                about: "Spotify",
-                link: "https://play.spotify.com/user/icaroharry"
             }
         ];
     }]);
