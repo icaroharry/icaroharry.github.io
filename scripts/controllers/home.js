@@ -11,8 +11,8 @@ angular.module('icaroioApp')
     .controller('HomeCtrl', function ($scope) {
         $scope.cards = [
         {
-            title: "Hello!",
-            paragraph:"My name is Icaro and I'm a brazilian programmer. I'm studying Information Systems at UFMG (Universidade Federal de Minas Gerais) and I graduated as a technical in Computer Networks at CEFET-MG (Centro Federal de Educação Tecnológica de Minas Gerais)."
+            title: "Parabéns!",
+            paragraph:"É com grande prazer que anunciamos que a equipe EatUp foi selecionada para participar do Lemonade!"
         }
     ];
 });

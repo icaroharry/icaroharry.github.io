@@ -1,16 +1,14 @@
 <div layout="column" flex id="content">
     <md-content class="md-padding">
         <md-card ng-repeat="card in cards">
+        <img ng-src="images/lemonade.jpg" class="md-card-image" alt="Washed Out"
+        width= "50%" height= "50%">
             <md-card-content>
                 <h2>{{card.title}}</h2>
                 <p>
                   {{card.paragraph}}
                 </p>
+                <md-button flex="50" class="md-primary md-raised" ng-click="" layout-align="end end" >Comemorar!</md-button>
             </md-card-content>
-            <div class="md-actions" layout="row" layout-align="end center">
-                <md-button>Action 1</md-button>
-                <md-button>Action 2</md-button>
-              </div>
-        </md-card>
     </md-content>
 </div>
