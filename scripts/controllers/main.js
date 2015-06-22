@@ -22,8 +22,16 @@ angular.module('icaroioApp')
 
         $scope.infos = [
             {
+                icon: "images/account.svg",
+                about: "Icaro Harry"
+            },
+            {
                 icon: "images/email.svg",
-                about: "eat@up.com"
+                about: "me@icaro.io"
+            },
+            {
+                icon: "images/cake-variant.svg",
+                about: "19 years old"
             },
             {
                 icon: "images/map-marker.svg",
