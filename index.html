@@ -1,50 +1,61 @@
 <html lang="en" ng-app="icaroioApp">
 
     <head>
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.css" />
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.css" />
         <link rel="stylesheet" href="styles/main.css">
+        <link href="lib/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+        <link href="lib/ng-material-floating-button/mfb/dist/mfb.css" rel="stylesheet"/>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
         <title>Ícaro Harry</title>
     </head>
 
-    <body layout="column" ng-controller="MainCtrl">
+    <body layout="column" ng-controller="MainCtrl" layout-fill>
         <md-toolbar>
-                <button ng-click="toggleSidenav('left')" hide-gt-sm class="menuBtn">
-                 <span class="visually-hidden">Menu</span>
-                </button>
-            <div class="md-toolbar-tools" layout="row" layout-align="end center">
+            <div class="md-toolbar-tools">
+                <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+                    <md-icon aria-label="Menu" md-font-icon="mdi mdi-menu" ng-style="{'font-size': '24px', height: '24px'}"></md-icon>
+                </md-button>
+                <span flex></span>
                 <md-button href="#home">Home</md-button>
                 <md-button href="#skills">Skills</md-button>
             </div>
         </md-toolbar>
         
         <div layout="row" flex>
-            <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+            <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+                <md-toolbar hide-gt-sm>
+                    <div class="md-toolbar-tools">
+                    </div>
+                </md-toolbar>
                 <md-content layout="column" layout-align="space-around center" class="md-padding">
-                    <div class="photo md-whiteframe-z2">
+                    <div class="photo">
                         <img src="images/icaro.png" alt="">
                     </div>
                 </md-content>
                 <md-content class="md-padding"> 
                     <md-list layout-align="space-around center">
-                        <md-item ng-repeat="info in infos" >
-                            <md-item-content class="padding:10px">
-                                <div class="md-tile-left">
-                                    <md-icon md-svg-src={{info.icon}} class="s24" alt=""></md-icon>
-                                </div>
-                            <div ng-hide="{{info.link}}" class="md-tile-content">
-                                {{info.about}}
+                        <md-list-item class="md-2-line" ng-repeat="info in infos">
+                            <md-icon md-font-icon={{info.icon}} class="md24" ng-style="{'font-size': '36px', height: '36px'}"></md-icon>
+                            <div class="md-list-item-text">
+                                <h3> {{ info.about }} </h3>
                             </div>
-                            <a ng-show = "{{info.link}}" href="{{info.link}}"></a>
-                            </md-item-content>
                             <md-divider ng-if="!$last"></md-divider>
-                        </md-item>
+                        </md-list-item>
                     </md-list>
                 </md-content>
             </md-sidenav>
             
-            <md-content ng-view md-scroll-y flex></md-content>            
+            <md-content ng-view md-scroll-y flex></md-content>
 
+            <nav mfb-menu template-url="ng-mfb-menu-md.tpl.html" position="br" effect="zoomin"
+                 active-icon="mdi mdi-account-plus" resting-icon="mdi mdi-account-outline"
+                 toggling-method="hover">
+              <button ng-click="follow('facebook')" mfb-button class="facebook-button" icon="mdi mdi-facebook" label="Facebook"></button>
+              <button ng-click="follow('github')" mfb-button class="github-button" icon="mdi mdi-github-circle" label="GitHub">
+              </button>
+              <button ng-click="follow('twitter')" mfb-button class="twitter-button" icon="mdi mdi-twitter" label="Twitter"></button>
+              <button ng-click="follow('spotify')" mfb-button class="spotify-button" icon="mdi mdi-spotify" label="Spotify"></button>
+            </nav>
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -68,7 +79,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-touch.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-aria.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+        <script src="lib/ng-material-floating-button/src/mfb-directive.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

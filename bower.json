@@ -1,0 +1,22 @@
+{
+  "name": "Personal Website",
+  "version": "0.0.0",
+  "homepage": "https://github.com/icaroharry/icaroharry.github.io",
+  "authors": [
+    "Icaro Harry <me@icaro.io>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mdi": "~1.2.65",
+    "ng-material-floating-button": "ng-mfb#~0.6.2"
+  }
+}

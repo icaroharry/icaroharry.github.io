@@ -9,7 +9,7 @@
  */
 
 angular.module('icaroioApp')
-    .controller('MainCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav, $mdDialog){
+    .controller('MainCtrl', ['$scope', '$window', '$mdSidenav', function($scope, $window, $mdSidenav, $mdDialog) {
         $scope.toggleSidenav = function(menuId) {
             $mdSidenav(menuId).toggle();
         };
@@ -22,20 +22,37 @@ angular.module('icaroioApp')
 
         $scope.infos = [
             {
-                icon: "images/account.svg",
+                icon: "mdi mdi-account",
                 about: "Icaro Harry"
             },
             {
-                icon: "images/email.svg",
+                icon: "mdi mdi-email",
                 about: "me@icaro.io"
             },
             {
-                icon: "images/cake-variant.svg",
+                icon: "mdi mdi-cake",
                 about: "19 years old"
             },
             {
-                icon: "images/map-marker.svg",
+                icon: "mdi mdi-map-marker",
                 about: "Belo Horizonte - MG"
             }
         ];
+
+        $scope.follow = function(socialNetwork) {
+            switch(socialNetwork) {
+                case 'spotify': 
+                    $window.open('https://play.spotify.com/user/icaroharry', '_blank');
+                    break;
+                case 'github': 
+                    $window.open('https://www.github.com/icaroharry', '_blank');
+                    break;
+                case 'facebook': 
+                    $window.open('https://www.facebook.com/icaroharry', '_blank');
+                    break;
+                case 'twitter': 
+                    $window.open('https://www.twitter.com/icaroharry', '_blank');
+                    break;
+            }
+        };
     }]);
