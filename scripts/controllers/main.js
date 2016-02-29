@@ -31,7 +31,7 @@ angular.module('icaroioApp')
             },
             {
                 icon: "mdi mdi-cake",
-                about: "19 years old"
+                about: "20 years old"
             },
             {
                 icon: "mdi mdi-map-marker",
